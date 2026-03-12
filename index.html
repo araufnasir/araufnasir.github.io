@@ -5,91 +5,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abdul Rauf Nasir</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f6f8;
-  color: #222;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background-color: #e9f0f7;
+  color: #1c1c1c;
 }
 
 .container {
-  max-width: 900px;
-  margin: 60px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 34px;
-  margin-bottom: 5px;
+.header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.subtitle {
+.header h1 {
+  font-size: 38px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.header .subtitle {
+  font-size: 18px;
   color: #555;
-  margin-bottom: 25px;
 }
 
 .profile-img {
-  display: block;
+  width: 180px;
+  height: 180px;
   margin: 20px auto;
-  width: 160px;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: block;
+  object-fit: cover; /* ensures square image scales nicely */
+  border: 2px solid #2563eb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.links {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .links a {
   display: inline-block;
-  margin-right: 18px;
-  margin-bottom: 10px;
-  color: #2563eb;
+  margin: 8px 12px;
   text-decoration: none;
-  font-weight: 500;
+  color: #2563eb;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
 }
 
 .links a:hover {
-  text-decoration: underline;
+  border-bottom: 2px solid #2563eb;
 }
 
 .section {
-  margin-top: 40px;
+  background: white;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .section h2 {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 6px;
+  font-size: 22px;
   margin-bottom: 12px;
+  color: #2563eb;
 }
 
-.placeholder {
-  color: #666;
+.section p {
   line-height: 1.6;
+  color: #444;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .skills span {
-  display: inline-block;
-  background: #f0f0f0;
-  padding: 6px 10px;
-  margin: 5px 6px 0 0;
-  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  padding: 6px 12px;
+  margin: 6px 6px 0 0;
+  border-radius: 4px;
   font-size: 14px;
 }
 
-@media (max-width: 600px) {
-  .container {
-    margin: 20px;
-    padding: 25px;
-  }
-
-  h1 {
+@media(max-width: 600px) {
+  .header h1 {
     font-size: 28px;
   }
-
+  .header .subtitle {
+    font-size: 16px;
+  }
   .profile-img {
-    width: 130px;
+    width: 140px;
+    height: 140px;
   }
 }
 </style>
@@ -100,25 +121,23 @@ h1 {
 <div class="container">
 
   <!-- Header -->
-  <h1>Abdul Rauf Nasir</h1>
-  <p class="subtitle">Data Science • Economics • Analytics</p>
-
-  <!-- Profile image -->
-  <img src="profile.jpeg" alt="Abdul Rauf Nasir" class="profile-img" />
-
-  <!-- Links -->
-  <div class="links">
-    <a href="https://github.com/araufnasir" target="_blank">GitHub</a>
-    <a href="http://www.linkedin.com/in/abdul-rauf-nasir/" target="_blank">LinkedIn</a>
-    <a href="https://www.datacamp.com/portfolio/abdulraufnasir" target="_blank">Portfolio</a>
-    <a href="Abdul_Rauf_Nasir.pdf" target="_blank">Resume</a>
-    <a href="mailto:araufnasir@uchicago.edu">Email</a>
+  <div class="header">
+    <h1>Abdul Rauf Nasir</h1>
+    <p class="subtitle">Data Science • Economics • Analytics</p>
+    <img src="profile.jpeg" alt="Abdul Rauf Nasir" class="profile-img" />
+    <div class="links">
+      <a href="https://github.com/araufnasir" target="_blank">GitHub</a>
+      <a href="http://www.linkedin.com/in/abdul-rauf-nasir/" target="_blank">LinkedIn</a>
+      <a href="https://www.datacamp.com/portfolio/abdulraufnasir" target="_blank">Portfolio</a>
+      <a href="Abdul_Rauf_Nasir.pdf" target="_blank">Resume</a>
+      <a href="mailto:araufnasir@uchicago.edu">Email</a>
+    </div>
   </div>
 
   <!-- About -->
   <div class="section">
     <h2>About</h2>
-    <p class="placeholder">
+    <p>
       I am a data scientist with a background in economics and analytics. I focus on statistical modeling, predictive analytics, and data-driven decision making.
     </p>
   </div>
@@ -126,7 +145,7 @@ h1 {
   <!-- Projects -->
   <div class="section">
     <h2>Projects</h2>
-    <p class="placeholder">
+    <p>
       Selected projects will be added here, including work related to analytics, machine learning, credit risk modeling, and product insights.
     </p>
   </div>
@@ -134,7 +153,7 @@ h1 {
   <!-- Experience -->
   <div class="section">
     <h2>Experience</h2>
-    <p class="placeholder">
+    <p>
       Professional experience and relevant roles will be added here, showcasing analytics, data science, and consulting expertise.
     </p>
   </div>
