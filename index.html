@@ -12,7 +12,7 @@
 body {
   margin: 0;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  background-color: #e9f0f7;
+  background-color: #f0f2f5;
   color: #1c1c1c;
 }
 
@@ -23,48 +23,49 @@ body {
 }
 
 .header {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-bottom: 40px;
 }
 
-.header h1 {
+.header-left {
+  flex: 1 1 300px;
+}
+
+.header-left h1 {
   font-size: 38px;
-  margin-bottom: 8px;
+  margin: 0 0 8px 0;
   font-weight: 700;
 }
 
-.header .subtitle {
+.header-left .subtitle {
   font-size: 18px;
+  margin-bottom: 12px;
   color: #555;
-}
-
-.profile-img {
-  width: 180px;
-  height: 180px;
-  margin: 20px auto;
-  display: block;
-  object-fit: cover; /* ensures square image scales nicely */
-  border: 2px solid #2563eb;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.links {
-  text-align: center;
-  margin-top: 20px;
 }
 
 .links a {
   display: inline-block;
-  margin: 8px 12px;
+  margin: 6px 10px 6px 0;
   text-decoration: none;
-  color: #2563eb;
+  color: #4a7c96; /* soothing teal/blue */
   font-weight: 600;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s;
 }
 
 .links a:hover {
-  border-bottom: 2px solid #2563eb;
+  border-bottom: 2px solid #4a7c96;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover; /* square */
+  margin-left: 30px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .section {
@@ -72,13 +73,13 @@ body {
   padding: 25px 30px;
   margin-bottom: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
 .section h2 {
   font-size: 22px;
   margin-bottom: 12px;
-  color: #2563eb;
+  color: #4a7c96;
 }
 
 .section p {
@@ -93,7 +94,7 @@ body {
 }
 
 .skills span {
-  background: #2563eb;
+  background: #4a7c96;
   color: white;
   padding: 6px 12px;
   margin: 6px 6px 0 0;
@@ -101,60 +102,119 @@ body {
   font-size: 14px;
 }
 
-@media(max-width: 600px) {
-  .header h1 {
-    font-size: 28px;
-  }
-  .header .subtitle {
-    font-size: 16px;
+/* Project cards */
+.project-card {
+  background: #f4f8fb;
+  padding: 18px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  color: #355c70;
+}
+
+.project-card p {
+  margin: 6px 0;
+}
+
+.project-card a {
+  color: #4a7c96;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+@media(max-width: 800px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
   }
   .profile-img {
-    width: 140px;
-    height: 140px;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .header-left h1 {
+    font-size: 28px;
+  }
+  .header-left .subtitle {
+    font-size: 16px;
   }
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
   <!-- Header -->
   <div class="header">
-    <h1>Abdul Rauf Nasir</h1>
-    <p class="subtitle">Data Science • Economics • Analytics</p>
-    <img src="profile.jpeg" alt="Abdul Rauf Nasir" class="profile-img" />
-    <div class="links">
-      <a href="https://github.com/araufnasir" target="_blank">GitHub</a>
-      <a href="http://www.linkedin.com/in/abdul-rauf-nasir/" target="_blank">LinkedIn</a>
-      <a href="https://www.datacamp.com/portfolio/abdulraufnasir" target="_blank">Portfolio</a>
-      <a href="Abdul_Rauf_Nasir.pdf" target="_blank">Resume</a>
-      <a href="mailto:araufnasir@uchicago.edu">Email</a>
+    <div class="header-left">
+      <h1>Abdul Rauf Nasir</h1>
+      <p class="subtitle">Econometric Modeling • Advanced Analytics • Computational Analysis</p>
+      <div class="links">
+        <a href="https://github.com/araufnasir" target="_blank">GitHub</a>
+        <a href="http://www.linkedin.com/in/abdul-rauf-nasir/" target="_blank">LinkedIn</a>
+        <a href="https://www.datacamp.com/portfolio/abdulraufnasir" target="_blank">Portfolio</a>
+        <a href="Abdul_Rauf_Nasir.pdf" target="_blank">Resume</a>
+        <a href="mailto:araufnasir@uchicago.edu">Email</a>
+      </div>
     </div>
+    <img src="profile.jpeg" alt="Abdul Rauf Nasir" class="profile-img" />
   </div>
 
   <!-- About -->
   <div class="section">
     <h2>About</h2>
     <p>
-      I am a data scientist with a background in economics and analytics. I focus on statistical modeling, predictive analytics, and data-driven decision making.
+      I am a graduate student at the University of Chicago pursuing an MS in Computational Analysis and Public Policy (MSCAPP). 
+      My focus is on econometrics, statistical modeling, causal inference, and data-driven decision making. 
+      I enjoy applying computational and analytical techniques to solve complex problems and generate actionable insights.
     </p>
   </div>
 
   <!-- Projects -->
   <div class="section">
     <h2>Projects</h2>
-    <p>
-      Selected projects will be added here, including work related to analytics, machine learning, credit risk modeling, and product insights.
-    </p>
+    <div class="project-card">
+      <h3>Income Distribution Effects Analysis</h3>
+      <p>
+        Analyzed U.S. income distribution trends across states and ZIP codes using interactive visualizations and statistical modeling.
+      </p>
+      <p>
+        <a href="https://github.com/uchicago-2026-capp30122/project-income-distribution-effects" target="_blank">View Project on GitHub</a>
+      </p>
+    </div>
   </div>
 
-  <!-- Experience -->
+  <!-- Professional Experience & Education -->
   <div class="section">
-    <h2>Experience</h2>
+    <h2>Experience & Education</h2>
     <p>
-      Professional experience and relevant roles will be added here, showcasing analytics, data science, and consulting expertise.
+      <strong>The University of Chicago (Sep 2025 – Expected Jun 2027)</strong><br>
+      MS in Computational Analysis and Public Policy (MSCAPP) – Focus: Econometrics, Causal Inference, Statistical Modeling, Machine Learning
+    </p>
+    <p>
+      <strong>Lahore University of Management Sciences (Sep 2014 – Jun 2018)</strong><br>
+      BSc (Honors) Economics & Mathematics – Relevant courses: Real Analysis, Econometrics, Time Series, Probability
+    </p>
+    <p>
+      <strong>Pep Boys (Jan 2025 – Sep 2025)</strong><br>
+      Data Analyst – Conducted pricing analytics, time series forecasting, and data-driven strategy analysis for 800+ stores.
+    </p>
+    <p>
+      <strong>Cashew Financial Services Limited (Sep 2023 – Jun 2024)</strong><br>
+      Data Scientist – Built ML-driven credit scoring models, engineered features for financial inclusion, and documented methodologies.
+    </p>
+    <p>
+      <strong>MCB Bank Limited (Jan 2019 – Dec 2021)</strong><br>
+      Senior Officer, Credit Risk Rating – Developed IFRS9-compliant credit risk models and analyzed financial statements.
     </p>
   </div>
 
@@ -165,16 +225,21 @@ body {
       <span>Python</span>
       <span>R</span>
       <span>SQL</span>
+      <span>C++</span>
       <span>Power BI</span>
       <span>Tableau</span>
       <span>Analytics</span>
       <span>Predictive Modeling</span>
       <span>Machine Learning</span>
       <span>Statistical Analysis</span>
+      <span>Time Series Analysis</span>
+      <span>Econometrics</span>
+      <span>Data Visualization</span>
+      <span>Experimental Design</span>
+      <span>Research Documentation</span>
     </div>
   </div>
 
 </div>
-
 </body>
 </html>
